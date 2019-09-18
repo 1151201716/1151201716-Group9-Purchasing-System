@@ -33,7 +33,12 @@
             </div>
             <div class="col mb-5">
                 <label class="labelpodetails">Vendor ID</label>
-                <input type="text" class="form-control" name="vendor_id" placeholder="Vendor ID">
+                <select name="vendor_id" class="form-control">
+                  <option value="" selected>None</option>
+                  {% for entry in vendor_id %}
+                  <option value="{{ entry.vendor_id }}">{{ entry.vendor_id }} {{ entry.vendor_name }}</option>
+                  {% endfor %}
+                </select>
             </div>
         </div>
 
